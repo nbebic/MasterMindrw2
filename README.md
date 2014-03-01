@@ -1,0 +1,5 @@
+MasterMindrw2
+=============
+
+Second rewrite of Master Mind
+ hgdlksajdfyblodf'fvlkasycjvuysdtvlerybsiftvkbuyarscuyetvopbuyposidfvbgiuafdayuegitkpnfghjbpnisudgfibaudgvonibbyjh[giohjngvoiegbfvoqueigbpeohjmejdfhgvlifuhpsoiuytgvytfvgboinm[gpyomjnhgibyvvryTAVRTBFKUSID,K'[.JLMPJONYHNBGUVRFJUBYNYOMnutrycervbyunmo,o.pkgvionhguvcyrytxesrdcbyugmiojpk,[pl.opmijobuvyrdftbguynojikop,imonygurvdbgunhmiojpk,[plkopjingurvdyufbiojpko[pijomygubvrdtcervbuygnmioj,pimnyguvrdtcvbygunhmiounygbrvdtcervftbgynuh
