@@ -19,7 +19,7 @@ namespace MasterMindrw2
                 {
                     konekcija.Open();
 
-                    string upit = "INSERT INTO skola (ime, brojPokusaja, vreme) VALUES('"+name+"','"+suc.attempts+"','"+(int)suc.time.TotalSeconds+"')";
+                    string upit = "INSERT INTO rezultat (ime, brojPokusaja, vreme) VALUES('"+name+"','"+suc.attempts+"','"+(int)suc.time.TotalSeconds+"')";
 
                     SqlCommand insertCommand = new SqlCommand(upit, konekcija);
                     insertCommand.ExecuteNonQuery();
@@ -27,6 +27,8 @@ namespace MasterMindrw2
             }
             catch (Exception e)
             {
+                string s = e.ToString();
+
                 throw new FaultException<string>(e.Message);
             }
         }

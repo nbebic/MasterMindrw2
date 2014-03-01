@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\asdf.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

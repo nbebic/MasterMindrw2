@@ -9,7 +9,7 @@ using System.Text;
 
 namespace MasterMindrw2
 {
-    [ServiceContract(SessionMode=SessionMode.Allowed)]
+    [ServiceContract(SessionMode=SessionMode.Required)]
     public interface IMasterMindrw2
     {
         /// <summary>

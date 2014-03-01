@@ -31,11 +31,19 @@ namespace MasterMindrw2
 
         public int[] Try(int[] c)
         {
-            return g.Try(new Comb(
+            Comb com = new Comb(
                 c[0],
                 c[1],
                 c[2],
-                c[3])).toArray();
+                c[3]);
+            if (g != null)
+            {
+                Guess asdf = g.Try(com);
+                int[] arr = asdf.toArray();
+                return arr;
+            }
+            return null;
+            
         }
 
         public int[] End()
@@ -67,7 +75,7 @@ namespace MasterMindrw2
 
         public DateTime SyncTime()
         {
-            throw new NotImplementedException();
+            return DateTime.Now;
         }
     }
 }
