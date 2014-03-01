@@ -29,34 +29,39 @@ namespace MasterMindrw2
             }
         }
 
-        public int[] Try(int[] comb)
+        public int[] Try(int[] c)
         {
-            throw new NotImplementedException();
+            return g.Try(new Comb(
+                c[0],
+                c[1],
+                c[2],
+                c[3])).toArray();
         }
 
         public int[] End()
         {
-            throw new NotImplementedException();
+            return g.Finish().toArray();
         }
 
-        public int[] Win()
+        public int[] Win(string name)
         {
-            throw new NotImplementedException();
+            DBHandler.AddScore(g.Score(), name);
+            return g.Score().toArray();
         }
 
         public System.Data.DataSet FetchAll()
         {
-            throw new NotImplementedException();
+            return DBHandler.FetchAll();
         }
 
         public System.Data.DataSet FetchTime()
         {
-            throw new NotImplementedException();
+            return DBHandler.FetchTime();
         }
 
         public System.Data.DataSet FetchTries()
         {
-            throw new NotImplementedException();
+            return DBHandler.FetchTries();
         }
 
 

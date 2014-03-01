@@ -29,7 +29,7 @@ namespace MasterMindrw2
             get { return solved; }
         }
 
-        public Comb Solution
+        internal Comb Solution
         {
             get
             {
@@ -38,7 +38,7 @@ namespace MasterMindrw2
             }
         }
 
-        public TimeSpan curTime
+        internal TimeSpan curTime
         {
             get 
             {
@@ -47,7 +47,7 @@ namespace MasterMindrw2
             }
         }
 
-        public Guess Try(Comb p)
+        internal Guess Try(Comb p)
         {
             if (attempts < 6)
             {
@@ -59,14 +59,14 @@ namespace MasterMindrw2
             return new Guess(0, 0);
         }
 
-        public Comb Finish()
+        internal Comb Finish()
         {
             end = DateTime.Now;
             done = true;
             return secret;
         }
 
-        public Success Score()
+        internal Success Score()
         {
             if (solved)
                 return new Success(curTime, attempts);

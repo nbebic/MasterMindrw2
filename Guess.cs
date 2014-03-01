@@ -20,5 +20,11 @@ namespace MasterMindrw2
         {
             return (this.d == b.d) && (this.p == b.p);
         }
+
+        internal int[] toArray()
+        {
+            int[] a = { d, p };
+            return a;
+        }
     }
 }

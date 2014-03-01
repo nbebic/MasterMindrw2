@@ -9,7 +9,7 @@ using System.Text;
 
 namespace MasterMindrw2
 {
-    [ServiceContract(SessionMode=SessionMode.Allowed]
+    [ServiceContract(SessionMode=SessionMode.Allowed)]
     public interface IMasterMindrw2
     {
         /// <summary>
@@ -17,6 +17,7 @@ namespace MasterMindrw2
         /// </summary>
         /// <returns>True ako je uspesno; false inace</returns>
         [OperationContract]
+        [FaultContract(typeof(string))]
         bool New();
 
         /// <summary>
@@ -29,6 +30,7 @@ namespace MasterMindrw2
         /// 1: Broj P.A.N.N.M. (Zuti u 'Slagalici')
         /// </returns>
         [OperationContract]
+        [FaultContract(typeof(string))]
         int[] Try(int[] comb);
 
         /// <summary>
@@ -36,6 +38,7 @@ namespace MasterMindrw2
         /// </summary>
         /// <returns>Tacnu kombinaciju kao niz od 4 cela broja (pocev od 0)</returns>
         [OperationContract]
+        [FaultContract(typeof(string))]
         int[] End();
 
         /// <summary>
@@ -48,13 +51,14 @@ namespace MasterMindrw2
         /// </returns>
         /// <remarks> Ako igra nije pogodjena vraca {-1, -1} </remarks>
         [OperationContract]
-        int[] Win();
+        [FaultContract(typeof(string))]
+        int[] Win(string ime);
 
         /// <summary>
         /// Cita sve upisane rezultate u bazi
         /// </summary>
         /// <returns>Rezultat pretrage</returns>
-        [FaultContract(typeof(SqlError))]
+        [FaultContract(typeof(string))]
         [OperationContract]
         DataSet FetchAll();
 
@@ -62,7 +66,7 @@ namespace MasterMindrw2
         /// Cita najboljih 10 rezultata sortiranih po vremenu
         /// </summary>
         /// <returns>Rezultat pretrage</returns>
-        [FaultContract(typeof(SqlError))]
+        [FaultContract(typeof(string))]
         [OperationContract]
         DataSet FetchTime();
 
@@ -70,7 +74,7 @@ namespace MasterMindrw2
         /// Cita najboljih 10 rezultata sortiranih po broju pokusaja
         /// </summary>
         /// <returns>Rezultat pretrage</returns>
-        [FaultContract(typeof(SqlError))]
+        [FaultContract(typeof(string))]
         [OperationContract]
         DataSet FetchTries();
 

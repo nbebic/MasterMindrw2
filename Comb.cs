@@ -7,9 +7,9 @@ namespace MasterMindrw2
 {
     struct Comb
     {
-        public static const Comb undef = new Comb(-1, -1, -1, -1);
+        public static Comb undef = new Comb(-1, -1, -1, -1);
         
-        private int[] k = new int[4];
+        private int[] k;
 
         public int this[int i]
         {
@@ -21,6 +21,7 @@ namespace MasterMindrw2
 
         public Comb(int p1, int p2, int p3, int p4)
         {
+            k = new int[4];
             k[0] = p1;
             k[1] = p2;
             k[2] = p3;
