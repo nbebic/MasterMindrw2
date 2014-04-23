@@ -76,6 +76,7 @@
       <DependentUpon>MasterMindrw2.svc</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScoreEntry.cs" />
     <Compile Include="Success.cs" />
   </ItemGroup>
   <ItemGroup />

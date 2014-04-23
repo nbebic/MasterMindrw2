@@ -60,7 +60,7 @@ namespace MasterMindrw2
         /// <returns>Rezultat pretrage</returns>
         [FaultContract(typeof(string))]
         [OperationContract]
-        DataSet FetchAll();
+        ScoreEntry[] FetchAll();
 
         /// <summary>
         /// Cita najboljih 10 rezultata sortiranih po vremenu
@@ -68,7 +68,7 @@ namespace MasterMindrw2
         /// <returns>Rezultat pretrage</returns>
         [FaultContract(typeof(string))]
         [OperationContract]
-        DataSet FetchTime();
+        ScoreEntry[] FetchTime();
 
         /// <summary>
         /// Cita najboljih 10 rezultata sortiranih po broju pokusaja
@@ -76,7 +76,7 @@ namespace MasterMindrw2
         /// <returns>Rezultat pretrage</returns>
         [FaultContract(typeof(string))]
         [OperationContract]
-        DataSet FetchTries();
+        ScoreEntry[] FetchTries();
 
         /// <summary>
         /// Vraca trenutno vreme trajanja igre. Racunati i kasnjenje ~PravoVreme =  Vreme + (Primanje - Slanje)/2

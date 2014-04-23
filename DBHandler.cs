@@ -33,45 +33,55 @@ namespace MasterMindrw2
             }
         }
 
-        internal static DataSet FetchAll()
+        internal static ScoreEntry[] FetchAll()
         {
-            DataSet d = new DataSet();
-            using (SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnStr"].ToString()))
-            {
-                using (SqlDataAdapter a = new SqlDataAdapter("SELECT ime, brojPokusaja, vreme FROM rezultat", c))
-                {
-                    a.Fill(d);
-                }
-            }
-            return d;
+            return DoTheStuff(
+
+@"SELECT ime, brojPokusaja, vreme 
+FROM rezultat"
+                );
         }
 
-        internal static DataSet FetchTime()
+        internal static ScoreEntry[] FetchTime()
         {
+            return DoTheStuff(
+
+@"SELECT ime, brojPokusaja, vreme 
+FROM rezultat 
+ORDER BY vreme 
+ASC 
+LIMIT 10"
+                );
+        }
+
+        internal static ScoreEntry[] FetchTries()
+        {
+            return DoTheStuff(
+
+@"SELECT ime, brojPokusaja, vreme 
+FROM rezultat 
+ORDER BY brojPokusaja 
+ASC 
+LIMIT 10"
+                );
+        }
+
+        internal static ScoreEntry[] DoTheStuff(string command)
+        {
+            List<ScoreEntry> list = new List<ScoreEntry>();
             DataSet d = new DataSet();
             using (SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnStr"].ToString()))
             {
                 using (SqlDataAdapter a = new SqlDataAdapter
-                    ("SELECT ime, brojPokusaja, vreme FROM rezultat ORDER BY vreme ASC LIMIT 10", c))
+                    (command, c))
                 {
                     a.Fill(d);
                 }
             }
-            return d;
-        }
+            for (int i = 0; i < d.Tables[0].Rows.Count; i++)
+                list.Add(new ScoreEntry(d.Tables[0].Rows[i]));
 
-        internal static DataSet FetchTries()
-        {
-            DataSet d = new DataSet();
-            using (SqlConnection c = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnStr"].ToString()))
-            {
-                using (SqlDataAdapter a = new SqlDataAdapter
-                    ("SELECT ime, brojPokusaja, vreme FROM rezultat ORDER BY brojPokusaja ASC LIMIT 10", c))
-                {
-                    a.Fill(d);
-                }
-            }
-            return d;
+            return list.ToArray();
         }
     }
 }

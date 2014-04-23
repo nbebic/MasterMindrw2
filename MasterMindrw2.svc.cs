@@ -57,17 +57,17 @@ namespace MasterMindrw2
             return g.Score().toArray();
         }
 
-        public System.Data.DataSet FetchAll()
+        public ScoreEntry[] FetchAll()
         {
             return DBHandler.FetchAll();
         }
 
-        public System.Data.DataSet FetchTime()
+        public ScoreEntry[] FetchTime()
         {
             return DBHandler.FetchTime();
         }
 
-        public System.Data.DataSet FetchTries()
+        public ScoreEntry[] FetchTries()
         {
             return DBHandler.FetchTries();
         }
