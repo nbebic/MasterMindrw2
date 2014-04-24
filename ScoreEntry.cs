@@ -13,7 +13,7 @@ namespace MasterMindrw2
         [DataMember]
         public string name { get; private set; }
         [DataMember]
-        public int time { get; private set; }
+        public long time { get; private set; }
         [DataMember]
         public int attempts { get; private set; }
 
@@ -30,7 +30,7 @@ namespace MasterMindrw2
             this = new ScoreEntry();
             this.name = (string) row[0];
             this.attempts = (int) row[1];
-            this.time = (int) row[2];
+            this.time = (long) row[2];
         }
     }
 }

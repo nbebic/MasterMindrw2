@@ -36,34 +36,22 @@ namespace MasterMindrw2
         internal static ScoreEntry[] FetchAll()
         {
             return DoTheStuff(
-
-@"SELECT ime, brojPokusaja, vreme 
-FROM rezultat"
-                );
+            "SELECT ime, brojPokusaja, vreme FROM rezultat"
+            );
         }
 
         internal static ScoreEntry[] FetchTime()
         {
             return DoTheStuff(
-
-@"SELECT ime, brojPokusaja, vreme 
-FROM rezultat 
-ORDER BY vreme 
-ASC 
-LIMIT 10"
-                );
+            "SELECT ime, brojPokusaja, vreme FROM rezultat ORDER BY vreme ASC LIMIT 10"
+            );
         }
 
         internal static ScoreEntry[] FetchTries()
         {
             return DoTheStuff(
-
-@"SELECT ime, brojPokusaja, vreme 
-FROM rezultat 
-ORDER BY brojPokusaja 
-ASC 
-LIMIT 10"
-                );
+            "SELECT ime, brojPokusaja, vreme FROM rezultat ORDER BY brojPokusaja ASC LIMIT 10"
+            );
         }
 
         internal static ScoreEntry[] DoTheStuff(string command)
